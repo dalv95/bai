@@ -12,5 +12,5 @@ const arrayPrint = (arrayToPrint) => {
     });
 }
 
-arrayFil(5,14);
+arrayFil(5,20);
 arrayPrint(Numbers);
