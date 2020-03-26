@@ -4,10 +4,10 @@
 		<title>Pink Floyd</title>
 		<meta charset="UTF-8">
 	</head>
-	<body>
-		<h1>Another Brick in the Wall</h1>
-		<h3>Pink Floyd</h3>
-		<p>We don't need no education<br>
+	<body ondblclick="changeColor(this)">
+		<h1 onclick="showTitle(this)">Another Brick</h1>
+		<h3 onclick="showBandDescription()">Pink Floyd</h3>
+		<p oncopy="dennyCopy()" onclick="setItalic(this)">We don't need no education<br>
 		We don't need no thought control<br>
 		No dark sarcasm in the classroom<br>
 		Teachers leave them kids alone<br>
@@ -15,13 +15,33 @@
 		All in all it's just another brick in the wall<br>
 		All in all you're just another brick in the wall</p>
 		
-		<p style="visibility: hidden;">Pink Floyd were an English rock band formed in London.<br>
+		<p onclick="showBandImage(this)" id="bandDescription" style="visibility: hidden;">Pink Floyd were an English rock band formed in London.<br>
 		They achieved international acclaim with their progressive<br>
 		and psychedelic music.</p>
 		
 		<script>
 			// a JavaScript code here ...
-			
+			const showTitle = (element) => {
+				element.innerHTML += " in the Wall"
+			}
+			const showBandDescription = () => {
+				document.getElementById("bandDescription").style.visibility = "visible";
+			}
+			const setItalic = (element) => {
+				element.style.fontStyle = "italic";
+			}
+			const changeColor = (element) => {
+				element.style.backgroundColor = "yellow"
+			}
+			const dennyCopy = () => {
+				window.alert("Copyright")
+			}
+			const showBandImage = (element) => {
+				var imgElement = document.createElement("img");
+				imgElement.setAttribute("src","https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg")
+				element.parentNode.insertBefore(imgElement, element.nextSibling)
+			}
+			// document.getElementById("test").setAttribute
 		</script>
 	</body>
 </html>
